@@ -21,8 +21,7 @@ function chekTypeOfSome (someValue){
     if (typeof someValue === 'undefined'){
         return 'неверный тип данных'
     } else {
-    someValue = String(someValue);
-    return someValue.length;
+    return String(someValue).length;
 }
 }
 console.log(chekTypeOfSome ('Hello'));
@@ -37,8 +36,8 @@ let chekTypeOfSome2=function  (someValue){
     if (typeof someValue === 'undefined'){
         return 'неверный тип данных'
     } else {
-    someValue = String(someValue);
-    return someValue.length;
+    
+    return String(someValue).length;
 }
 }
 console.log(chekTypeOfSome2 ('Hello'));
@@ -51,8 +50,7 @@ const chekTypeOfSome3=(someValue)=>{
     
     return typeof someValue === 'undefined'
      ? ( 'неверный тип данных') 
-     : (someValue = String(someValue),
-       someValue.length);
+     : (String(someValue).length);
 }
 
 console.log(chekTypeOfSome3 ('Hello'));

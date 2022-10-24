@@ -940,3 +940,36 @@
 //       )
 //       .join(''); // соединяет ['my', 'Long', 'Word'] в 'myLongWord'
 //   }
+
+
+//Вывод на экран каждого елемента массива forEach
+
+['Bilbo', 'Gendalf','Nazgul'].forEach(
+  (item,index,array) => {
+    console.log (`${item} имеет позицию ${index} в ${array}`);
+  }
+);
+
+
+//let result = arr.find(
+//   function (item,index,arr) {
+    //найдет нужный и прервет операцию
+//   }
+// )
+
+
+// let result = arr.filter(
+//   function(item,index,arr){
+//     //запишет каждый еллемент тру в новый массив
+//   }
+
+// item => typeof item[0] ==='string' //к домашке
+// )
+
+
+//let lenght = ['Bilbo', 'Gendalf','Nazgul'].map(
+//   item => item.lenght
+// ) //вернет массив чисел где каждое чило будет равно длинне елемента массива  . Используется для создания нового массива из новых значений и т.д
+
+
+// Array.isArray(arr) проверяет является ли арр массивом

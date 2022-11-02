@@ -36,20 +36,33 @@ function count(obj) {
 // };
 
 
-function topSalary(salaries) {
+// function topSalary(salaries) {
+
+//     let topSal=0;
+//     let nameTop;
+//     for (let salary of Object.values(salaries)) {
+//         for (let name of Object.keys(salaries)) {
+//             if (topSal<salary) {
+//                 topSal = salary;
+//                 nameTop = name;
+//                 return nameTop + " " + topSal; 
+//               }
+            
+//         }
+      
+//     }
+//     return null;
+//   }
+  function topSalary(salaries) {
 
     let topSal=0;
     let nameTop;
-    for (let salary of Object.values(salaries)) {
-        for (let name of Object.keys(salaries)) {
-            if (topSal<salary) {
-                topSal = salary;
-                nameTop = name;
+    for (let key in salaries) {
+            if (topSal<salaries[key]) {
+                topSal = salaries[key];
+                nameTop = key;
                 return nameTop + " " + topSal; 
               }
-            
-        }
-      
     }
     return null;
   }

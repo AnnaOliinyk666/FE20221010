@@ -62,16 +62,16 @@
 
 // отфильторвываем массив что бы удалить из него определенные елементы
 
-let someArr = ['ttt','fff',555,true, false,undefined,null,0,5,61,1];
+// let someArr = ['ttt','fff',555,true, false,undefined,null,0,5,61,1];
 
-function withoutArr2(array, ...deleteData) {
-  let filtered = [...array];
+// function withoutArr2(array, ...deleteData) {
+//   let filtered = [...array];
 
-  deleteData.forEach((deleteItem)=>{
-    filtered = filtered.filter(
-      (item)=> item !== deleteItem
-    );
-  });
+//   deleteData.forEach((deleteItem)=>{
+//     filtered = filtered.filter(
+//       (item)=> item !== deleteItem
+//     );
+//   });
 
   // for (let i = 0; i < deleteData.length; i++) {
   //   const element = deleteData[i];
@@ -80,9 +80,108 @@ function withoutArr2(array, ...deleteData) {
   //   );
   // }
   
-  return filtered;
+//   return filtered;
+// }
+
+// console.log(withoutArr2(someArr,null,5,1,false,555));
+
+
+// 02.11.2022
+
+let users = {
+  'Kolya': '1000',
+  'Vasya': '500',
+  'Petya': '200'
+};
+
+for (const key in users) {
+  if (key !== 'Vasya') {
+    const num = Number(users[key])
+  console.log(num)
+};
+};
+///////
+
+let week = {
+  1: "Mon",
+  2: "Wed",
+  3: "Tus",
+  4: "The",
+  5: "Fri",
+  6: "Sat",
+  7: "Sun"
+};
+
+function keyReturn (value, obj) {
+  for (const key in obj) {
+    if (obj[key]===value) {
+      return key
+    }
+  }
+  return value + " " + "is not find"
+}
+console.log(keyReturn("Tus", week))
+
+
+////////
+
+
+let employt = {
+  Николай: 1000,
+  Василий: 2000,
+  Светлана: 2500,
+  Иван: 1500,
+  Отдел: 'Разработка',
+};
+
+function getSalaryInfo(obj) {
+  return {
+    summa: getSum(obj),
+    maxSalary: getMaxSalary(obj),
+    minSalary: getMinSalary(obj, getMaxSalary(obj)),
+  };
 }
 
-console.log(withoutArr2(someArr,null,5,1,false,555));
+function getSum(obj) {
+  let summa = 0;
+  for (const key in obj) {
+    if (typeof obj[key] === 'number') {
+      summa += obj[key];
+    }
+  }
+  return summa;
+}
+
+function getMaxSalary(obj) {
+  let maxSalary = 0;
+  for (const key in obj) {
+    if (typeof obj[key] === 'number') {
+      if (maxSalary < obj[key]) {
+        maxSalary = obj[key];
+      }
+    }
+  }
+  return maxSalary;
+}
+
+function getMinSalary(obj, maxSalary) {
+  let minSalary = maxSalary;
+  for (const key in obj) {
+    if (typeof obj[key] === 'number') {
+      if (minSalary > obj[key]) {
+        minSalary = obj[key];
+      }
+    }
+  }
+  return minSalary;
+}
+console.log(getSalaryInfo(employt));
+
+////////////////////
 
 
+// Напишите функцию, которая проверяет, является ли элемент именно простым объектом, а не массивом
+// const data = { a: 1 };
+// console.log(isPlainObject(data)); // true
+
+let isPlainObject = (data) => typeof data === "object" && !Array.isArray(data)

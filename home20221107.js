@@ -44,7 +44,6 @@ function intersection(obj,obj2) {
         ... newObj,
         [key]: obj[key]
       }
-      
     }
     } 
   return newObj;
